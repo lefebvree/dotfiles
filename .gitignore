@@ -1,0 +1,17 @@
+*
+!.gitignore
+!.vimrc
+!.zshrc
+
+!.atom/
+!styles.less
+
+!.config/
+
+!herbstluftwm/
+!autostart
+
+!xfce4/
+!terminal/
+!terminalrc
+
