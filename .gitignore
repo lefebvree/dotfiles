@@ -15,3 +15,5 @@
 !terminal/
 !terminalrc
 
+!.tmux.conf
+

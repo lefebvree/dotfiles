@@ -10,7 +10,7 @@ COMPLETION_WAITING_DOTS="true"
 POWERLINE_RIGHT_A="mixed"
 POWERLINE_HIDE_USER_NAME="true"
 POWERLINE_HIDE_HOST_NAME="true"
-#POWERLINE_NO_BLANK_LINE="true"
+POWERLINE_NO_BLANK_LINE="true"
 POWERLINE_PATH="short"
 
 plugins=(git zsh-completions zsh-syntax-highlighting sudo)
@@ -20,6 +20,9 @@ autoload -U compinit && compinit
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 
 source $ZSH/oh-my-zsh.sh
+
+# TMUX
+PROMPT="$PROMPT"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
 export LANG=en_US.UTF-8
 export EDITOR='vim'
