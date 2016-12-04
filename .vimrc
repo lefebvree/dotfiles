@@ -158,16 +158,8 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 "   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 "endif
 
-if (empty($TMUX))
-    if (has("nvim"))
-        let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-    endif
-    if (has("termguicolors"))
-        set termguicolors
-    endif
-endif
-
 let g:airline_powerline_fonts = 1
+let g:Powerline_symbols = 'fancy'
 
 colorscheme base16-materia
 set background=dark

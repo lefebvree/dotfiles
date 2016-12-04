@@ -2,7 +2,7 @@
 export ZSH=/home/etienne/.oh-my-zsh
 
 # ZSH
-ZSH_THEME="powerline"
+ZSH_THEME="hyperzsh"
 #ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
