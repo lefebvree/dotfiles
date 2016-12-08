@@ -16,6 +16,10 @@
 !terminalrc
 
 !.tmux.conf
-
 !.rofi
+!.hyper.js
+
+!polybar
+!config
+!launch.sh
 

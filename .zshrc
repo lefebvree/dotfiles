@@ -24,7 +24,8 @@ source $ZSH/oh-my-zsh.sh
 # TMUX
 PROMPT="$PROMPT"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
-export LANG=en_US.UTF-8
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
 export EDITOR='vim'
 
 # BINDINGS
@@ -83,7 +84,7 @@ matom () {
 	cd $1
 	atom .
 	clear
-	ls -R 
+	ls -R
 }
 man() {
     LESS_TERMCAP_md=$'\e[01;31m' \

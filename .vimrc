@@ -161,10 +161,10 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 let g:airline_powerline_fonts = 1
 let g:Powerline_symbols = 'fancy'
 
-colorscheme base16-materia
+colorscheme base16-flat
 set background=dark
 
-set relativenumber 
+set relativenumber
 set number
 set mouse=a
 
@@ -202,5 +202,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'honza/vim-snippets'
 
 Plug 'octol/vim-cpp-enhanced-highlight'
+
+Plug 'bronson/vim-trailing-whitespace'
 
 call plug#end()
