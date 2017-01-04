@@ -23,7 +23,10 @@ module.exports = {
 
   plugins: [
 	'hyperlinks',
-	'hyperterm-base16-flat'
+	'hyperterm-base16-flat',
+	'hyperterm-alternatescroll',
+	'hyperterm-paste',
+	'hyper-statusline'
   ],
 
   localPlugins: []

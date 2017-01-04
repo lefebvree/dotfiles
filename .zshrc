@@ -52,24 +52,23 @@ mkcd () {
 }
 
 cs () {
-	clear
 	cd $1
 	ls
 }
 
 mgcc () {
-    clear
 	gcc -Wall $1.c -o $1.o && ./$1.o
 }
 mg++ () {
-    clear
 	g++ -Wall -Wextra $1.cpp -o $1.o && ./$1.o
+}
+mgpp () {
+	g++ -Wall -Wextra $1.cc -o $1.o && ./$1.o
 }
 mgdb () {
     gdb $1 -q -ex "start" -ex "set confirm off" -ex "tui enable"
 }
 mjavac () {
-    clear
 	javac $1.java && java $1
 }
 newc () {
@@ -83,7 +82,6 @@ newc++ () {
 matom () {
 	cd $1
 	atom .
-	clear
 	ls -R
 }
 man() {
