@@ -41,6 +41,8 @@ alias :r="sudo reboot"
 alias :s="sudo shutdown -h now"
 alias :l="gnome-session-quit --logout --no-prompt"
 
+alias gnome="XDG_SESSION_TYPE=wayland dbus-run-session gnome-session"
+
 # FUNCTIONS
 vps () {
 	ssh $1@149.202.55.34
