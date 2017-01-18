@@ -42,6 +42,7 @@ alias :s="sudo shutdown -h now"
 alias :l="gnome-session-quit --logout --no-prompt"
 
 alias gnome="XDG_SESSION_TYPE=wayland dbus-run-session gnome-session"
+alias vpn="sudo openvpn --config ~/.scripts/client.ovpn"
 
 # FUNCTIONS
 vps () {

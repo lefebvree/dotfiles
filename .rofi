@@ -1,10 +1,10 @@
 #!/bin/sh
 
 font="Fira Code 18"
-bg_color="#37474F"
-fg_color="#FFFFFF"
+bg_color="#111111"
+fg_color="#111111"
 
-bg_hl="#CFD8DC"
+bg_hl="#111111"
 fg_hl="#111111"
 
 width=800
@@ -14,6 +14,6 @@ padding=10
 border=2
 
 
-rofi -show run -font "$font" -fg "$fg_color" -bg "$bg_color" -hlfg "$fg_hl" -hlbg "$bg_hl" -width $width -lines $lines -padding $padding -separator-style none -hide-scrollbar -bw $border -bc "#111111" -terminal xfce4-terminal 
+rofi -show run -font "$font" -fg "$fg_color" -bg "$bg_color" -hlfg "$fg_hl" -hlbg "$bg_hl" -width $width -lines $lines -padding $padding -separator-style none -hide-scrollbar -bw $border -terminal hyper
 
 

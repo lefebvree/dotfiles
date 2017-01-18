@@ -2,6 +2,7 @@
 !.gitignore
 !.vimrc
 !.zshrc
+!.xinitrc
 
 !.atom/
 !styles.less
