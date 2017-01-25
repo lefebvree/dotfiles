@@ -79,7 +79,7 @@ hc keybind $Mod-"1" use "1"
 hc keybind $Mod-Control-Right use_index +1 --skip-visible
 hc keybind $Mod-Control-Left  use_index -1 --skip-visible
 hc keybind $Mod-Control-Shift-Right move_index +1 --skip-visible
-hc keybind $Mod-Control-Shift-Left  move_index +1 --skip-visible
+hc keybind $Mod-Control-Shift-Left  move_index -1 --skip-visible
 
 # layouting
 hc keybind $Mod-r remove

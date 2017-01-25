@@ -51,7 +51,7 @@ font-2 = Fira\ Code:pixelsize=10
 
 modules-left = xwindow
 modules-center =
-modules-right = backlight volume xkeyboard memory cpu wlan battery temperature date powermenu
+modules-right = mpd backlight volume xkeyboard wlan battery date powermenu
 
 tray-position = right
 tray-padding = 2
