@@ -11,7 +11,7 @@ module.exports = {
     padding: '0',
     shell: '',
 	base16: {
-		scheme: 'google'
+		scheme: 'ocean'
 	}
   },
 

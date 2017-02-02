@@ -17,7 +17,7 @@ plugins=(git zsh-completions zsh-syntax-highlighting sudo)
 
 autoload -U compinit && compinit
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/etienne/.scripts"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -36,13 +36,13 @@ bindkey '^[[1;5C' forward-word
 alias :c="clear"
 alias :q="exit"
 alias :u="pacaur -Syu"
-alias :z="source ~/.zshrc"
+alias :z="source /home/etienne/.zshrc"
 alias :r="sudo reboot"
 alias :s="sudo shutdown -h now"
-alias :l="gnome-session-quit --logout --no-prompt"
 
 alias gnome="XDG_SESSION_TYPE=wayland dbus-run-session gnome-session"
 alias vpn="sudo openvpn --config ~/.scripts/client.ovpn"
+alias clipboard="xclip -selection clipboard"
 
 # FUNCTIONS
 vps () {
@@ -81,11 +81,6 @@ newc () {
 newc++ () {
     cat ~/.scripts/file.cc > $1.cpp
     vim $1.cpp
-}
-matom () {
-	cd $1
-	atom .
-	ls -R
 }
 man() {
     LESS_TERMCAP_md=$'\e[01;31m' \

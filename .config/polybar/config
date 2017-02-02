@@ -11,7 +11,7 @@
 background = #222
 background-alt = #444
 foreground = #dfdfdf
-foreground-alt = #55
+foreground-alt = #888
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
@@ -36,7 +36,7 @@ overline-color = #f00
 underline-size = 2
 underline-color = #00f
 
-border-bottom = 2
+border-bottom-size = 2
 border-bottom-color = #333
 
 spacing = 1
@@ -45,13 +45,14 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Fira\ Code:pixelsize=10
-font-1 = Fira\ Code:size=6
-font-2 = Fira\ Code:pixelsize=10
+font-0 = Fira\ Code:pixelsize=9
+font-1 = Wuncon Siji:pixelsize=12;0
+font-2 = Wuncon Siji:pixelsize=12;0
+font-3 = Wuncon Siji:pixelsize=12;0
 
 modules-left = xwindow
 modules-center =
-modules-right = mpd backlight volume xkeyboard wlan battery date powermenu
+modules-right = backlight volume vpncheck pkg spotify xkeyboard wlan battery date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -69,10 +70,36 @@ tray-padding = 2
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
 
+[module/pkg]
+type = custom/script
+interval = 1200
+format = <label>
+format-underline = #dc322f
+label = "%output:0:30%"
+exec = /home/etienne/.config/polybar/pkg.sh
+exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
+
+[module/vpncheck]
+type = custom/script
+exec = pgrep openvpn
+interval = 30
+label = vpn
+format-underline = #268bd2
+format-prefix = " "
+format-prefix-foreground = #5b
+
+[module/spotify]
+type = custom/script
+exec = spotify-now -i "%artist - %title" -e "-" -p "paused"
+interval = 15
+label = "%output:0:20%"
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #6ae368
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:50:...%
+label = %title:0:35:...%
 
 [module/xkeyboard]
 type = internal/xkeyboard

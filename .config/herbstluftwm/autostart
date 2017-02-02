@@ -109,14 +109,17 @@ hc keybind $Mod-c cycle
 hc keybind $Mod-i jumpto urgent
 
 # system
-hc keybind XF86MonBrightnessUp   spawn xbacklight +10
-hc keybind XF86MonBrightnessDown spawn xbacklight -10
+hc keybind XF86MonBrightnessUp   spawn xbacklight +5
+hc keybind XF86MonBrightnessDown spawn xbacklight -5
 
 hc keybind XF86AudioRaiseVolume  spawn amixer -q set Master 5%+ unmute
 hc keybind XF86AudioLowerVolume  spawn amixer -q set Master 5%- unmute
 hc keybind XF86AudioMute         spawn amixer -q set Master toggle
 
 hc keybind $Mod-space spawn ~/.rofi
+hc keybind $Mod-l spawn /home/etienne/.scripts/lock
+hc keybind $Mod-p spawn /home/etienne/.scripts/suspend
+
 
 # theme
 hc attr theme.tiling.reset 1
