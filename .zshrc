@@ -13,7 +13,7 @@ POWERLINE_HIDE_HOST_NAME="true"
 POWERLINE_NO_BLANK_LINE="true"
 POWERLINE_PATH="short"
 
-plugins=(git zsh-completions zsh-syntax-highlighting sudo)
+plugins=(git zsh-completions zsh-syntax-highlighting zsh-autosuggestions sudo)
 
 autoload -U compinit && compinit
 

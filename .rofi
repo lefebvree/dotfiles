@@ -1,19 +1,17 @@
 #!/bin/sh
 
-font="Fira Code 18"
+font="Fira Code 16"
 bg_color="#111111"
 fg_color="#111111"
 
 bg_hl="#111111"
 fg_hl="#111111"
 
-width=800
-lines=10
+width=1376
+lines=5
 
-padding=10
+padding=25
 border=2
 
 
-rofi -show run -font "$font" -fg "$fg_color" -bg "$bg_color" -hlfg "$fg_hl" -hlbg "$bg_hl" -width $width -lines $lines -padding $padding -separator-style none -hide-scrollbar -bw $border -terminal hyper
-
-
+rofi -show run -location 2 -yoffset 27 -font "$font" -width $width -lines $lines -padding $padding -separator-style none -hide-scrollbar -bw $border -terminal hyper
