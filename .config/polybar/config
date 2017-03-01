@@ -372,15 +372,22 @@ menu-0-0 = REBOOT
 menu-0-0-exec = menu-open-1
 menu-0-1 = POWER OFF
 menu-0-1-exec = menu-open-2
+menu-0-2 = SUSPEND
+menu-0-2-exec = menu-open-3
 
 menu-1-0 = CANCEL
 menu-1-0-exec = menu-open-0
-menu-1-1 = REBOOT
+menu-1-1 = OK
 menu-1-1-exec = sudo reboot
 
-menu-2-0 = POWER OFF
+menu-2-0 = OK
 menu-2-0-exec = sudo poweroff
 menu-2-1 = CANCEL
 menu-2-1-exec = menu-open-0
+
+menu-3-0 = OK
+menu-3-0-exec = /home/etienne/.scripts/suspend
+menu-3-1 = CANCEL
+menu-3-1-exec = menu-open-0
 
 ; vim:ft=dosini
