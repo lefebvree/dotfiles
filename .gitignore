@@ -24,3 +24,6 @@
 !config
 !launch.sh
 
+!.scripts/
+!spotify.sh
+!lock

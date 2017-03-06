@@ -50,8 +50,8 @@ vps () {
 }
 
 mkcd () {
-    mkdir $1
-    cd $1
+	mkdir $1
+	cd $1
 }
 
 cs () {
@@ -69,26 +69,25 @@ mgpp () {
 	g++ -Wall -Wextra $1.cc -o $1.o && ./$1.o
 }
 mgdb () {
-    gdb $1 -q -ex "start" -ex "set confirm off" -ex "tui enable"
+	gdb $1 -q -ex "start" -ex "set confirm off" -ex "tui enable"
 }
 mjavac () {
 	javac $1.java && java $1
 }
 newc () {
-    cat ~/.scripts/file.c > $1.c
-    vim $1.c
+	cat ~/.scripts/file.c > $1.c
+	vim $1.c
 }
 newc++ () {
-    cat ~/.scripts/file.cc > $1.cpp
-    vim $1.cpp
+	cat ~/.scripts/file.cc > $1.cpp
+	vim $1.cpp
 }
 man() {
-    LESS_TERMCAP_md=$'\e[01;31m' \
-    LESS_TERMCAP_me=$'\e[0m' \
-    LESS_TERMCAP_se=$'\e[0m' \
-    LESS_TERMCAP_so=$'\e[01;44;33m' \
-    LESS_TERMCAP_ue=$'\e[0m' \
-    LESS_TERMCAP_us=$'\e[01;32m' \
-    command man "$@"
+	LESS_TERMCAP_md=$'\e[01;31m' \
+	LESS_TERMCAP_me=$'\e[0m' \
+	LESS_TERMCAP_se=$'\e[0m' \
+	LESS_TERMCAP_so=$'\e[01;44;33m' \
+	LESS_TERMCAP_ue=$'\e[0m' \
+	LESS_TERMCAP_us=$'\e[01;32m' \
+	command man "$@"
 }
-

@@ -1,18 +1,19 @@
 module.exports = {
   config: {
-	fontSize: 14,
+    fontSize: 14,
     fontFamily: '"Fira Code", "Operator Mono", monospace',
     cursorShape: 'BEAM',
     css: '',
     termCSS: `
-		x-screen x-row { font-variant-ligatures: contextual; }
-	`,
+    x-screen x-row { font-variant-ligatures: contextual; }
+    `,
     padding: '10',
-    shell: '',
+    shell: ''
   },
 
-  plugins: ["hyperterm-paste", "hyperterm-atom-dark", "hyper-tab-icons"],
-
-  localPlugins: []
-};
-
+  plugins: [
+    'hyperterm-paste',
+    'hyperterm-atom-dark',
+    'hyper-tab-icons'
+  ]
+}
