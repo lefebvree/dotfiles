@@ -1,13 +1,13 @@
 module.exports = {
   config: {
-    fontSize: 14,
+    fontSize: 16,
     fontFamily: '"Fira Code", "Operator Mono", monospace',
-    cursorShape: 'BEAM',
-    css: '',
+    cursorShape: 'BLOCK',
+	css: '',
     termCSS: `
-    x-screen x-row { font-variant-ligatures: contextual; }
+    	x-screen x-row { font-variant-ligatures: contextual; }
     `,
-    padding: '10',
+    padding: '0',
     shell: ''
   },
 

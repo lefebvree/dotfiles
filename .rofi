@@ -14,4 +14,4 @@ padding=25
 border=2
 
 
-rofi -show run -location 2 -yoffset 27 -font "$font" -width $width -lines $lines -padding $padding -separator-style none -hide-scrollbar -bw $border -terminal hyper
+rofi -show run -location 2 -yoffset 31 -font "$font" -width $width -lines $lines -padding $padding -separator-style none -hide-scrollbar -bw $border -terminal hyper

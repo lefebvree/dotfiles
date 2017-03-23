@@ -129,10 +129,10 @@ hc set frame_border_active_color '#666666'
 hc set frame_border_normal_color '#444444'
 hc set frame_bg_normal_color '#444444'
 hc set frame_bg_active_color '#444444'
-hc set frame_border_width 3
+hc set frame_border_width 0
 hc set always_show_frame 1
 hc set frame_bg_transparent 1
-hc set frame_transparent_width 5
+hc set frame_transparent_width 2
 hc set frame_gap 0
 
 hc attr theme.active.color '#666666'
@@ -140,8 +140,8 @@ hc attr theme.normal.color '#444444'
 hc attr theme.urgent.color orange
 hc attr theme.inner_width 0
 hc attr theme.inner_color "#444444"
-hc attr theme.border_width 2
-hc attr theme.floating.border_width 4
+hc attr theme.border_width 0
+hc attr theme.floating.border_width 1
 hc attr theme.floating.outer_width 1
 hc attr theme.floating.outer_color "#444444"
 hc attr theme.active.inner_color '#444444'
@@ -153,6 +153,7 @@ hc set frame_padding 0
 hc set smart_window_surroundings 0
 hc set smart_frame_surroundings 1
 hc set mouse_recenter_gap 0
+hc set default_frame_layout 1
 
 # rules
 hc unrule -F
@@ -166,7 +167,7 @@ hc unlock
 
 herbstclient set tree_style '╾│ ├└╼─┐'
 
-herbstclient pad 0 29
+herbstclient pad 0 31 0 0
 
 xrdb -merge ~/.Xressources &
 

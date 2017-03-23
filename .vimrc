@@ -77,7 +77,6 @@ set foldcolumn=1
 " Enable syntax highlighting
 syntax enable
 
-
 " Set extra options when running in GUI mode
 if has("gui_running")
   set guioptions-=T
@@ -91,7 +90,6 @@ set encoding=utf8
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
-
 
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
@@ -159,9 +157,12 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 "endif
 
 let g:airline_powerline_fonts = 1
+let g:airline_theme='onedark'
 let g:Powerline_symbols = 'fancy'
+let g:onedark_terminal_italics = 1
+let g:onedark_termcolors=16
 
-colorscheme base16-flat
+colorscheme onedark
 set background=dark
 
 set relativenumber
@@ -192,7 +193,7 @@ Plug 'scrooloose/syntastic'
 
 Plug 'valloric/youcompleteme'
 
-Plug 'chriskempson/base16-vim'
+Plug 'sheerun/vim-polyglot'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
