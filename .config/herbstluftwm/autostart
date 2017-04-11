@@ -168,7 +168,7 @@ hc unlock
 
 herbstclient set tree_style '╾│ ├└╼─┐'
 
-herbstclient pad 0 31 0 0
+herbstclient pad 0 29 0 0
 
 xrdb -merge ~/.Xressources &
 
