@@ -53,10 +53,10 @@ hc keybind $Mod-Control-h       resize left +$resizestep
 hc keybind $Mod-Control-j       resize down +$resizestep
 hc keybind $Mod-Control-k       resize up +$resizestep
 hc keybind $Mod-Control-l       resize right +$resizestep
-hc keybind $Mod-Control-Left    resize left +$resizestep
-hc keybind $Mod-Control-Down    resize down +$resizestep
-hc keybind $Mod-Control-Up      resize up +$resizestep
-hc keybind $Mod-Control-Right   resize right +$resizestep
+#hc keybind $Mod-Control-Left    resize left +$resizestep
+#hc keybind $Mod-Control-Down    resize down +$resizestep
+#hc keybind $Mod-Control-Up      resize up +$resizestep
+#hc keybind $Mod-Control-Right   resize right +$resizestep
 
 # tags
 tag_names=( {1..9} )
@@ -123,6 +123,7 @@ hc keybind $Mod-space spawn ~/.rofi
 hc keybind $Mod-o spawn /home/etienne/.scripts/lock
 hc keybind $Mod-p spawn /home/etienne/.scripts/suspend
 
+hc keybind $Mod-g toggle window_gap
 
 # theme
 hc attr theme.tiling.reset 1
@@ -150,7 +151,7 @@ hc attr theme.active.inner_color '#444444'
 hc attr theme.active.outer_color '#444444'
 hc attr theme.background_color '#444444'
 
-hc set window_gap 0
+hc set window_gap 20
 hc set frame_padding 0
 hc set smart_window_surroundings 0
 hc set smart_frame_surroundings 1
@@ -168,7 +169,7 @@ hc unlock
 
 herbstclient set tree_style '╾│ ├└╼─┐'
 
-herbstclient pad 0 29 0 0
+herbstclient pad 0 25 0 0
 
 xrdb -merge ~/.Xressources &
 

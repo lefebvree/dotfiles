@@ -1,6 +1,6 @@
 #!/bin/sh
 
-font="Fira Code 16"
+font="Fira Code 12"
 bg_color="#111111"
 fg_color="#111111"
 
@@ -8,10 +8,10 @@ bg_hl="#111111"
 fg_hl="#111111"
 
 width=1376
-lines=5
+lines=8
 
 padding=25
 border=2
 
 
-rofi -show run -location 2 -yoffset 29 -font "$font" -width $width -lines $lines -padding $padding -separator-style none -hide-scrollbar -bw $border -terminal hyper
+rofi -show run -location 2 -yoffset 25 -font "$font" -width $width -lines $lines -padding $padding -separator-style none -hide-scrollbar -bw $border -terminal hyper
