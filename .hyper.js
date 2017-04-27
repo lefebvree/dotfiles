@@ -3,9 +3,9 @@ module.exports = {
     fontSize: 17,
     fontFamily: '"Fira Code", "Operator Mono", monospace',
     cursorShape: 'BLOCK',
-	css: '',
+    css: '',
     termCSS: `
-    	x-screen x-row { font-variant-ligatures: contextual; }
+      x-screen x-row { font-variant-ligatures: contextual; }
     `,
     padding: '0',
     shell: ''
@@ -14,6 +14,9 @@ module.exports = {
   plugins: [
     'hyperterm-paste',
     'hyperterm-atom-dark',
-    'hyper-tab-icons'
+    'hyper-tab-icons',
+    'hypercwd',
+    'hyperlinks',
+    'hyper-statusline'
   ]
 }

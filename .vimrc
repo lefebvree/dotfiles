@@ -185,7 +185,6 @@ try
 catch
 endtry
 
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
@@ -207,3 +206,4 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'bronson/vim-trailing-whitespace'
 
 call plug#end()
+
