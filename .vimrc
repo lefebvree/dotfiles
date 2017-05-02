@@ -205,5 +205,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 
 Plug 'bronson/vim-trailing-whitespace'
 
+Plug 'jiangmiao/auto-pairs'
+
 call plug#end()
 

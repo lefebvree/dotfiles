@@ -1,6 +1,6 @@
 module.exports = {
   config: {
-    fontSize: 17,
+    fontSize: 16,
     fontFamily: '"Fira Code", "Operator Mono", monospace',
     cursorShape: 'BLOCK',
     css: '',
