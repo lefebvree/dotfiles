@@ -157,10 +157,16 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 "endif
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme='onedark'
+let g:airline_theme='bubblegum'
 let g:Powerline_symbols = 'fancy'
 let g:onedark_terminal_italics = 1
 let g:onedark_termcolors=16
+
+let g:lightline = {
+	\ 'colorscheme': 'wombat',
+	\ 'separator': { 'left': '|', 'right': '|' },
+	\ 'subseparator': { 'left': '·', 'right': '·' }
+	\}
 
 colorscheme onedark
 set background=dark
@@ -176,8 +182,8 @@ set guioptions-=l
 set guioptions-=L
 
 " Comments in italic
-highlight Comment gui=italic
-highlight Comment cterm=italic
+"highlight Comment gui=italic
+"highlight Comment cterm=italic
 
 try
   set undodir=~/.vim_runtime/temp_dirs/undodir
@@ -194,9 +200,6 @@ Plug 'valloric/youcompleteme'
 
 Plug 'sheerun/vim-polyglot'
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
 Plug 'pangloss/vim-javascript'
 
 Plug 'honza/vim-snippets'
@@ -206,6 +209,11 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'bronson/vim-trailing-whitespace'
 
 Plug 'jiangmiao/auto-pairs'
+
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
 

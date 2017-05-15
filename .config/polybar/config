@@ -9,12 +9,12 @@
 
 [colors]
 background = #282c34
-background-alt = #444
+background-alt = #3e4451
 foreground = #fff
-foreground-alt = #aaa
-primary = #0E4749
-secondary = #E55812
-alert = #bd2c40
+foreground-alt = #fff
+primary = #98c379
+secondary = #56b6c2
+alert = #be5046
 
 [global/wm]
 margin-top = 5
@@ -47,12 +47,12 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Fira\ Code:pixelsize=8
-font-1 = Material\ Design\ Icons:pixelsize=10;0
+font-0 = Iosevka:pixelsize=8
+font-1 = Material\ Design\ Icons:pixelsize=9;0
 
 modules-left = date xwindow
-modules-center = backlight volume
-modules-right = spotify vpncheck pkg xkeyboard battery wlan powermenu
+modules-center = herbstluftwm
+modules-right = backlight volume spotify vpncheck pkg xkeyboard battery wlan powermenu
 
 tray-position = left
 tray-padding = 2
@@ -64,7 +64,7 @@ scroll-down = herbstclient use_index -1
 type = custom/script
 interval = 1200
 format = <label>
-format-underline = #dc322f
+format-underline = #be5046
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 label = "%output:0:30%"
@@ -76,7 +76,7 @@ type = custom/script
 exec = pgrep openvpn
 interval = 30
 label = VPN
-format-underline = #268bd2
+format-underline = #61afef
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 
@@ -93,19 +93,36 @@ scroll-down = /home/etienne/.scripts/spotify.sh 2
 scroll-up = /home/etienne/.scripts/spotify.sh 1
 click-left = /home/etienne/.scripts/spotify.sh 0
 
+[module/herbstluftwm]
+type = custom/script
+exec = /home/etienne/.scripts/herbstluftwm.sh
+interval = 1
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #3e4451
+
+[module/ewmh]
+type = internal/xworkspaces
+label-active = %icon% hey %name%
+pin-workspaces = true
+enable-click = false
+enable-scroll = false
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #3e4451
+
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:80:...%
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #888
+format-underline = #abb2bf
 
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-underline = ${colors.secondary}
-format-prefix = " "
+format-underline = #c678dd
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 
 label-layout = %layout%
@@ -133,12 +150,12 @@ type = internal/xbacklight
 format = <bar>
 
 bar-width = 10
-bar-indicator = 
+bar-indicator = 
 bar-indicator-foreground = ${colors.foreground-alt}
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = #9f78e1
+bar-fill-foreground = #fff
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
@@ -165,7 +182,7 @@ interface = wlp2s0
 interval = 3.0
 
 format-connected = <ramp-signal><label-connected>
-format-connected-underline = #95C623
+format-connected-underline = #98c379
 format-disconnected-underline = ${self.format-connected-underline}
 
 label-connected = %essid%
@@ -184,7 +201,7 @@ type = internal/network
 interface = enp1s0f1
 interval = 3.0
 
-format-connected-underline = #55aa55
+format-connected-underline = #98c379
 format-connected-prefix = " "
 format-connected-foreground-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
@@ -203,9 +220,9 @@ date-alt = "%Y-%m-%d "
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #279296
+format-underline = #56b6c2
 
 label = %time% %date%
 
@@ -219,13 +236,13 @@ format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+bar-volume-foreground-0 = #ffffff
+bar-volume-foreground-1 = #ffffff
+bar-volume-foreground-2 = #ffffff
+bar-volume-foreground-3 = #ffffff
+bar-volume-foreground-4 = #ffffff
+bar-volume-foreground-5 = #ffffff
+bar-volume-foreground-6 = #ffffff
 bar-volume-gradient = true
 bar-volume-indicator = 
 bar-volume-indicator-font = 2
@@ -243,7 +260,7 @@ adapter = ACAD
 full-at = 98
 
 format-charging = <animation-charging><label-charging>
-format-charging-underline = #ffb52a
+format-charging-underline = #d19a66
 
 format-discharging = <ramp-capacity><label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
@@ -285,33 +302,27 @@ ramp-foreground = ${colors.foreground-alt}
 [module/powermenu]
 type = custom/menu
 format-underline = ${colors.secondary}
+format-prefix = " "
 
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  CANCEL
+label-open = etienne
+label-close = cancel
 label-close-foreground = ${colors.secondary}
-label-separator = |
+label-separator = ·
 label-separator-foreground = ${colors.foreground-alt}
 
-menu-0-0 = REBOOT
+menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
-menu-0-1 = POWER OFF
+menu-0-1 = power off
 menu-0-1-exec = menu-open-2
-menu-0-2 = SUSPEND
+menu-0-2 = suspend
 menu-0-2-exec = menu-open-3
 
-menu-1-0 = CANCEL
-menu-1-0-exec = menu-open-0
-menu-1-1 = REBOOT
-menu-1-1-exec = sudo reboot
+menu-1-0 = reboot
+menu-1-0-exec = sudo reboot
 
-menu-2-0 = OFF
+menu-2-0 = off
 menu-2-0-exec = sudo poweroff
-menu-2-1 = CANCEL
-menu-2-1-exec = menu-open-0
 
-menu-3-0 = LOCK
+menu-3-0 = lock
 menu-3-0-exec = /home/etienne/.scripts/suspend
-menu-3-1 = CANCEL
-menu-3-1-exec = menu-open-0
 

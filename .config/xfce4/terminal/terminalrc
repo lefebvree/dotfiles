@@ -1,10 +1,10 @@
 [Configuration]
-FontName=Operator Mono Semi-Light 12
+FontName=Monaco for Powerline 11
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
 MiscBordersDefault=TRUE
 MiscCursorBlinks=TRUE
-MiscCursorShape=TERMINAL_CURSOR_SHAPE_IBEAM
+MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
 MiscDefaultGeometry=110x25
 MiscInheritGeometry=FALSE
 MiscMenubarDefault=FALSE
@@ -26,7 +26,9 @@ MiscDefaultWorkingDir=
 MiscRewrapOnResize=TRUE
 MiscUseShiftArrowsToScroll=FALSE
 ColorForeground=#e0e0e0
-ColorBackground=#2C3E50
+ColorBackground=#28272c2c3434
 ColorCursor=#e0e0e0
-ColorPalette=#2C3E50;#E74C3C;#2ECC71;#F1C40F;#3498DB;#9B59B6;#1ABC9C;#e0e0e0;#95A5A6;#E67E22;#34495E;#7F8C8D;#BDC3C7;#f5f5f5;#be643c;#ECF0F1
+ColorPalette=rgb(40,44,52);rgb(231,76,60);rgb(46,204,113);rgb(241,196,15);rgb(52,152,219);rgb(155,89,182);rgb(26,188,156);rgb(224,224,224);rgb(149,165,166);rgb(230,126,34);rgb(52,73,94);rgb(127,140,141);rgb(189,195,199);rgb(245,245,245);rgb(190,100,60);rgb(236,240,241)
+MiscCopyOnSelect=FALSE
+MiscSlimTabs=FALSE
 

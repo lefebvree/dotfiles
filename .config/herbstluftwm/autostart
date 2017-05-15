@@ -59,8 +59,8 @@ hc keybind $Mod-Control-l       resize right +$resizestep
 #hc keybind $Mod-Control-Right   resize right +$resizestep
 
 # tags
-tag_names=( {1..9} )
-tag_keys=( {1..9} 0 )
+tag_names=( {1..6} )
+tag_keys=( {1..6} 0 )
 
 hc rename default "${tag_names[0]}" || true
 for i in ${!tag_names[@]} ; do
@@ -164,9 +164,6 @@ hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on
 hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
 
-# go to index 5
-hc use 5
-
 # unlock, just to be sure
 hc unlock
 
@@ -178,4 +175,7 @@ xrdb -merge ~/.Xressources &
 
 nitrogen --restore &
 compton &
+
+/opt/google/chrome/google-chrome --no-startup-window &
+
 $HOME/.config/polybar/launch.sh

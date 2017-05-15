@@ -91,3 +91,5 @@ man() {
 	LESS_TERMCAP_us=$'\e[01;32m' \
 	command man "$@"
 }
+
+export PATH="$HOME/.yarn/bin:$PATH"
