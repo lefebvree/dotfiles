@@ -42,17 +42,17 @@ border-bottom-size = 0
 border-bottom-color = #333
 
 spacing = 1
-padding-left = 2
-padding-right = 2
+padding-left = 0
+padding-right = 1
 module-margin-left = 1
 module-margin-right = 1
 
 font-0 = Iosevka:pixelsize=8
 font-1 = Material\ Design\ Icons:pixelsize=9;0
 
-modules-left = date xwindow
-modules-center = herbstluftwm
-modules-right = backlight volume spotify vpncheck pkg xkeyboard battery wlan powermenu
+modules-left = herbstluftwm xwindow
+modules-center = window
+modules-right = backlight volume spotify vpncheck pkg xkeyboard battery wlan powermenu date
 
 tray-position = left
 tray-padding = 2
@@ -84,8 +84,8 @@ format-prefix-foreground = ${colors.foreground-alt}
 type = custom/script
 exec = spotify-now -i "%artist - %title"
 exec-if = spotify-now -i "1" -p "1" -e "0" | grep 1
-interval = 2
-label = "%output:0:80%"
+interval = 3
+label = "%output:0:50%"
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #6ae368
@@ -96,9 +96,14 @@ click-left = /home/etienne/.scripts/spotify.sh 0
 [module/herbstluftwm]
 type = custom/script
 exec = /home/etienne/.scripts/herbstluftwm.sh
-interval = 1
+interval = 0.7
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #3e4451
+
+[module/window]
+type = custom/script
+exec = /home/etienne/.scripts/window.sh
+format-prefix-foreground = ${colors.foreground-alt}
 
 [module/ewmh]
 type = internal/xworkspaces
@@ -112,10 +117,10 @@ format-underline = #3e4451
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:80:...%
-format-prefix = " "
+label = %title:0:70:...%
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #abb2bf
+format-underline = #ddd
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -220,9 +225,8 @@ date-alt = "%Y-%m-%d "
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #56b6c2
+format-underline = #ddd
 
 label = %time% %date%
 
@@ -325,4 +329,3 @@ menu-2-0-exec = sudo poweroff
 
 menu-3-0 = lock
 menu-3-0-exec = /home/etienne/.scripts/suspend
-

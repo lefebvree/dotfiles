@@ -159,10 +159,16 @@ hc set mouse_recenter_gap 0
 
 # rules
 hc unrule -F
-hc rule focus=on # normally focus new clients
+hc rule focus=off # normally focus new clients
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on
 hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
+
+# application rules
+hc rule class=Google-chrome tag=1
+hc rule class=Spotify tag=6
+hc rule class=Atom tag=3
+hc rule class=Firefox tag=1
 
 # unlock, just to be sure
 hc unlock
@@ -170,6 +176,7 @@ hc unlock
 herbstclient set tree_style '╾│ ├└╼─┐'
 
 herbstclient pad 0 25 0 0
+
 
 xrdb -merge ~/.Xressources &
 
