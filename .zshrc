@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/etienne/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # ZSH
 ZSH_THEME="hyperzsh"
@@ -17,7 +17,7 @@ plugins=(git zsh-completions zsh-syntax-highlighting zsh-autosuggestions sudo)
 
 autoload -U compinit && compinit
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/etienne/.scripts"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/.scripts:$HOME/.yarn/bin"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -32,16 +32,7 @@ export EDITOR='vim'
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
 
-# ALIAS
-alias :c="clear"
-alias :q="exit"
-alias :u="pacaur -Syu"
-alias :z="source /home/etienne/.zshrc"
-alias :r="sudo reboot"
-alias :s="sudo shutdown -h now"
-
-alias gnome="XDG_SESSION_TYPE=wayland dbus-run-session gnome-session"
-alias vpn="sudo openvpn --config ~/.scripts/client.ovpn"
+alias vpn="sudo openvpn --config $HOME/.scripts/client.ovpn"
 alias clipboard="xclip -selection clipboard"
 
 # FUNCTIONS
@@ -92,4 +83,3 @@ man() {
 	command man "$@"
 }
 
-export PATH="$HOME/.yarn/bin:$PATH"
