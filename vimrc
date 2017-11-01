@@ -9,11 +9,6 @@ filetype indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 
-
-" :W sudo saves the file
-command W w !sudo tee % > /dev/null
-
-
 " Set 10 lines to the cursor
 set so=10
 
@@ -171,6 +166,8 @@ let g:lightline = {
 colorscheme onedark
 set background=dark
 
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
 set relativenumber
 set number
 set mouse=a
@@ -185,11 +182,55 @@ set guioptions-=L
 "highlight Comment gui=italic
 "highlight Comment cterm=italic
 
+" NERD
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 try
   set undodir=~/.vim_runtime/temp_dirs/undodir
   set undofile
 catch
 endtry
+
+" Grammalecte
+let g:grammalecte_cli_py='/usr/share/grammalecte-fr/cli.py'
+
+" Goyo toggle
+nmap yo :Goyo<CR>
+
+" This is the default extra key bindings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" Default fzf layout
+" - down / up / left / right
+let g:fzf_layout = { 'down': '~40%' }
+
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+" [Buffers] Jump to the existing window if possible
+let g:fzf_buffers_jump = 1
+
+nmap ; :Files<CR>
+nmap ,, :Buffers<CR>
 
 call plug#begin('~/.vim/plugged')
 
@@ -200,20 +241,22 @@ Plug 'valloric/youcompleteme'
 
 Plug 'sheerun/vim-polyglot'
 
-Plug 'pangloss/vim-javascript'
-
-Plug 'honza/vim-snippets'
-
 Plug 'octol/vim-cpp-enhanced-highlight'
 
 Plug 'bronson/vim-trailing-whitespace'
 
 Plug 'jiangmiao/auto-pairs'
 
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
-
 Plug 'itchyny/lightline.vim'
+
+Plug 'airblade/vim-gitgutter'
+
+Plug 'dpelle/vim-Grammalecte'
+
+Plug 'junegunn/goyo.vim'
+
+Plug '/usr/bin/fzf'
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 

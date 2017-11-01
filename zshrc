@@ -13,11 +13,12 @@ POWERLINE_HIDE_HOST_NAME="true"
 POWERLINE_NO_BLANK_LINE="true"
 POWERLINE_PATH="short"
 
-plugins=(git zsh-completions zsh-syntax-highlighting zsh-autosuggestions sudo)
+
+plugins=(git zsh-completions zsh-syntax-highlighting zsh-autosuggestions zshmarks sudo sublime)
 
 autoload -U compinit && compinit
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/.scripts:$HOME/.yarn/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/.scripts:$HOME/.yarn/bin:$HOME/.gem/ruby/2.4.0/bin"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -34,10 +35,20 @@ bindkey '^[[1;5C' forward-word
 
 alias vpn="sudo openvpn --config $HOME/.scripts/client.ovpn"
 alias clipboard="xclip -selection clipboard"
+alias vimf='vim "$(fzf --height 95%)"'
+
+# ALIAS MASTER
+alias LEIAassembleur="$HOME/Master/Mif08\ -\ Compilation/leia/assembleur/asm.py"
+alias LEIAsimulation="$HOME/Master/Mif08\ -\ Compilation/leia/simulateur/LEIA"
 
 # FUNCTIONS
 vps () {
-	ssh $1@149.202.55.34
+	#ssh $1@149.202.55.34
+	mosh $1@149.202.55.34
+}
+
+newmake () {
+	sed "s/current_date/`date +%d.%m.%Y`/" /home/eti/Documents/Makefilebase > Makefile
 }
 
 mkcd () {
@@ -48,6 +59,10 @@ mkcd () {
 cs () {
 	cd $1
 	ls
+}
+
+search () {
+	pacaur -Ss $1
 }
 
 mgcc () {
