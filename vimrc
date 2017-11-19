@@ -159,14 +159,16 @@ let g:onedark_termcolors=16
 
 let g:lightline = {
 	\ 'colorscheme': 'wombat',
-	\ 'separator': { 'left': '|', 'right': '|' },
-	\ 'subseparator': { 'left': '·', 'right': '·' }
+	\ 'separator': { 'left': '', 'right': '' },
+	\ 'subseparator': { 'left': '', 'right': '' }
 	\}
 
 colorscheme onedark
 set background=dark
 
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
+hi VertSplit ctermbg=NONE guibg=NONE ctermfg=DarkGrey
 
 set relativenumber
 set number
@@ -184,7 +186,19 @@ set guioptions-=L
 
 " NERD
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd vimenter * NERDTree
+
+" Focus editor window
+autocmd VimEnter * wincmd p
+
+" toggle w/ ctrl-n
+map <C-n> :NERDTreeToggle<CR>
+
+let g:NERDTreeDirArrowExpandable = '›'
+let g:NERDTreeDirArrowCollapsible= '»'
+
+let g:NERDTreeWinPos = "right"
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -257,6 +271,8 @@ Plug 'junegunn/goyo.vim'
 
 Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf.vim'
+
+Plug 'mhinz/vim-startify'
 
 call plug#end()
 

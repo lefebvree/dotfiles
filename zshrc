@@ -37,14 +37,16 @@ alias vpn="sudo openvpn --config $HOME/.scripts/client.ovpn"
 alias clipboard="xclip -selection clipboard"
 alias vimf='vim "$(fzf --height 95%)"'
 
+alias t='python ~/.scripts/t.py --task-dir ./ --list .todo --delete-if-empty'
+
 # ALIAS MASTER
-alias LEIAassembleur="$HOME/Master/Mif08\ -\ Compilation/leia/assembleur/asm.py"
-alias LEIAsimulation="$HOME/Master/Mif08\ -\ Compilation/leia/simulateur/LEIA"
+alias LEIAassembleur="$HOME/Master/M1if08\ -\ Compilation/leia/assembleur/asm.py"
+alias LEIAsimulation="$HOME/Master/M1if08\ -\ Compilation/leia/simulateur/LEIA"
 
 # FUNCTIONS
 vps () {
-	#ssh $1@149.202.55.34
-	mosh $1@149.202.55.34
+	#ssh $1@etlf.fr
+	mosh $1@etlf.fr
 }
 
 newmake () {
