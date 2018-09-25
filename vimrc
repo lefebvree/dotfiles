@@ -163,7 +163,7 @@ let g:lightline = {
 	\ 'subseparator': { 'left': '', 'right': '' }
 	\}
 
-colorscheme onedark
+"colorscheme onedark
 set background=dark
 
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE

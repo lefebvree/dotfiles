@@ -2,7 +2,7 @@
 export ZSH=$HOME/.oh-my-zsh
 
 # ZSH
-ZSH_THEME="hyperzsh"
+ZSH_THEME="materialshell"
 #ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
@@ -42,6 +42,9 @@ alias t='python ~/.scripts/t.py --task-dir ./ --list .todo --delete-if-empty'
 # ALIAS MASTER
 alias LEIAassembleur="$HOME/Master/M1if08\ -\ Compilation/leia/assembleur/asm.py"
 alias LEIAsimulation="$HOME/Master/M1if08\ -\ Compilation/leia/simulateur/LEIA"
+
+export CLASSPATH="$HOME/Master/Multi-Agents/JADE-all-4.5.0/JADE-bin-4.5.0/jade/lib/jade.jar:$HOME/Master/Multi-Agents/JADE-all-4.5.0/JADE-examples-4.5.0/jade/lib/jadeExamples.jar"
+alias jade="java jade.Boot -gui"
 
 # FUNCTIONS
 vps () {
