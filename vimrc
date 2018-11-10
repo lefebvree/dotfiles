@@ -159,16 +159,20 @@ let g:onedark_termcolors=16
 
 let g:lightline = {
 	\ 'colorscheme': 'wombat',
-	\ 'separator': { 'left': '', 'right': '' },
-	\ 'subseparator': { 'left': '', 'right': '' }
+	\ 'separator': { 'left': "\uE0B4", 'right': "\uE0B6" },
+	\ 'subseparator': { 'left': "\uE0B5", 'right': "\uE0B7" }
 	\}
 
 "colorscheme onedark
 set background=dark
 
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+highlight FoldColumn term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+highlight VertSplit term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+highlight EndOfBuffer ctermfg=NONE ctermbg=NONE
 
-hi VertSplit ctermbg=NONE guibg=NONE ctermfg=DarkGrey
+hi SpellBad ctermbg=Black
+hi SpellCap ctermbg=Black
 
 set relativenumber
 set number
@@ -181,8 +185,8 @@ set guioptions-=l
 set guioptions-=L
 
 " Comments in italic
-"highlight Comment gui=italic
-"highlight Comment cterm=italic
+highlight Comment gui=italic
+highlight Comment cterm=italic
 
 " NERD
 autocmd StdinReadPre * let s:std_in=1
@@ -213,6 +217,12 @@ let g:grammalecte_cli_py='/usr/share/grammalecte-fr/cli.py'
 
 " Goyo toggle
 nmap yo :Goyo<CR>
+
+sign define SyntasticError text=→ texthl=error
+sign define SyntasticWarning text=→ texthl=Pl58870000d0ff8700b
+sign define SyntasticStyleError text=→ texthl=error
+sign define SyntasticStyleWarning text=→ texthl=tPl58870000d0ff8700b
+
 
 " This is the default extra key bindings
 let g:fzf_action = {
@@ -273,6 +283,8 @@ Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf.vim'
 
 Plug 'mhinz/vim-startify'
+
+Plug 'christoomey/vim-system-copy'
 
 call plug#end()
 
