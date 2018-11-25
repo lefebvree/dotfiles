@@ -199,8 +199,8 @@ autocmd VimEnter * wincmd p
 " toggle w/ ctrl-n
 map <C-n> :NERDTreeToggle<CR>
 
-let g:NERDTreeDirArrowExpandable = '›'
-let g:NERDTreeDirArrowCollapsible= '»'
+let g:NERDTreeDirArrowExpandable = ' ›'
+let g:NERDTreeDirArrowCollapsible= ' »'
 
 let g:NERDTreeWinPos = "right"
 

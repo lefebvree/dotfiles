@@ -27,30 +27,30 @@ POWERLINE_HIDE_HOST_NAME="true"
 POWERLINE_NO_BLANK_LINE="true"
 POWERLINE_PATH="short"
 
-# POWERLINE OPENING & CLOSING SYMBOLS
-function _o_c () {
-	echo "%{$reset_color% $fg[$1]\e[38;5;$2m% $bg[$1]%}"
-}
-function _c_c () {
-	echo "%{$reset_color% $fg[$1]$reset_color%}"
-}
-
 # SPACESHIP ZSH CONFIG
-SPACESHIP_PROMPT_ORDER=(time user dir host git package node venv exec_time line_sep vi_mode jobs exit_code char)
-SPACESHIP_VI_MODE_INSERT="$(_o_c green 233)INSERT$(_c_c green)"
-SPACESHIP_VI_MODE_NORMAL="$(_o_c blue 233)NORMAL$(_c_c blue)"
+SPACESHIP_PROMPT_ORDER=(time dir host git venv exec_time line_sep vi_mode jobs exit_code char)
+#SPACESHIP_PROMPT_ADD_NEWLINE=false
+#SPACESHIP_PROMPT_FIRST_PREFIX_SHOW=true
 SPACESHIP_CHAR_SYMBOL='→ '
+#SPACESHIP_CHAR_COLOR_SUCCESS=grey
+SPACESHIP_DIR_TRUNC_PREFIX="…/"
+SPACESHIP_DIR_COLOR=blue
+SPACESHIP_DIR_PREFIX='» '
 SPACESHIP_EXIT_CODE_SHOW=true
 SPACESHIP_EXIT_CODE_SYMBOL=' '
-SPACESHIP_EXEC_TIME_PREFIX=' '
-SPACESHIP_GIT_SYMBOL=' '
+SPACESHIP_EXEC_TIME_PREFIX=''
+SPACESHIP_GIT_SYMBOL='  '
+SPACESHIP_GIT_BRANCH_PREFIX='  '
 SPACESHIP_GIT_PREFIX=''
-SPACESHIP_GIT_STATUS_PREFIX=" $(_o_c red 233)"
-SPACESHIP_GIT_STATUS_SUFFIX="$(_c_c red)"
+SPACESHIP_GIT_STATUS_DELETED="×"
+SPACESHIP_GIT_STATUS_UNTRACKED="•"
+SPACESHIP_TIME_SHOW=true
+SPACESHIP_TIME_COLOR=white
+SPACESHIP_TIME_FORMAT="%T"
 
 # ZSH VI-MODE
-bindkey -v
-export KEYTIMEOUT=1
+bindkey -e
+#export KEYTIMEOUT=1
 
 # TMUX
 PROMPT="$PROMPT"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
@@ -74,7 +74,7 @@ alias gitp="git push"
 # FUNCTIONS
 vps () {
 	#ssh $1@etlf.fr
-	mosh $1@etlf.fr
+	mosh $1@etiennelefebvre.com
 }
 
 mkcd () {
@@ -112,5 +112,5 @@ man() {
 	command man "$@"
 }
 
-neofetch
+neofetch ; fortune -e -s -n 300 futurama rickandmorty montypython darkestdungeon | lolcat -h 0.07 -v 0.05
 
